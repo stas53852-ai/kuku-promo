@@ -4,6 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kukuruku Casino — 100% бонус + 100 фриспинов</title>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108438213', 'ym');
+    ym(108438213, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108438213" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -54,10 +68,8 @@
   .hero-card {
     background: linear-gradient(135deg, #1E1540 0%, #2A1A5E 100%);
     border: 1px solid rgba(107,33,232,0.4);
-    border-radius: 24px;
-    padding: 24px 20px;
-    margin: 14px 0;
-    text-align: center;
+    border-radius: 24px; padding: 24px 20px;
+    margin: 14px 0; text-align: center;
     position: relative; overflow: hidden;
     animation: fadeUp 0.7s ease 0.1s both;
     box-shadow: 0 20px 60px rgba(107,33,232,0.3);
@@ -88,8 +100,7 @@
   }
   .bonus-label {
     font-size: 15px; color: var(--muted);
-    margin: 4px 0 14px;
-    position: relative; z-index: 1;
+    margin: 4px 0 14px; position: relative; z-index: 1;
   }
   .freespins-row {
     display: flex; align-items: center;
@@ -119,8 +130,7 @@
   }
   .timer-label {
     font-size: 11px; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 2px;
-    margin-bottom: 10px;
+    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;
   }
   .timer-blocks {
     display: flex; justify-content: center;
@@ -167,8 +177,7 @@
     width: 8px; height: 8px;
     background: #4ADE80; border-radius: 50%;
     box-shadow: 0 0 8px #4ADE80;
-    animation: pulse 1.5s ease-in-out infinite;
-    flex-shrink: 0;
+    animation: pulse 1.5s ease-in-out infinite; flex-shrink: 0;
   }
   .counter-text { font-size: 13px; color: var(--muted); }
   .counter-text strong { color: var(--text); }
@@ -176,8 +185,6 @@
     text-align: center; font-size: 11px;
     color: rgba(155,143,191,0.4); line-height: 1.5;
   }
-
-  /* ФИКСИРОВАННАЯ КНОПКА */
   .cta-fixed {
     position: fixed;
     bottom: 0; left: 0; right: 0;
@@ -187,8 +194,7 @@
   }
   .cta-btn {
     display: block;
-    max-width: 480px; margin: 0 auto;
-    width: 100%;
+    max-width: 480px; margin: 0 auto; width: 100%;
     background: linear-gradient(135deg, var(--yellow) 0%, #FFA500 100%);
     color: #0D0B1A;
     font-family: 'Unbounded', sans-serif;
@@ -213,7 +219,6 @@
     text-align: center; font-size: 11px;
     color: var(--muted); margin-top: 6px;
   }
-
   @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
   @keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.04); } }
@@ -223,7 +228,6 @@
 </style>
 </head>
 <body>
-
 <div class="container">
   <div class="logo-wrap">
     <div class="logo">KUKU<span>RUKU</span></div>
@@ -284,7 +288,7 @@
 </div>
 
 <div class="cta-fixed">
-  <a href="https://track.magicclick.partners/click?o=1824&a=25099&link_id=8054&sub1=prelend_kuku" class="cta-btn">
+  <a href="https://track.magicclick.partners/click?o=1824&a=25099&link_id=8054&sub1=prelend_kuku" class="cta-btn" onclick="ym(108438213,'reachGoal','click_bonus')">
     🎁 Забрать бонус сейчас
   </a>
   <div class="cta-sub">Бесплатно · Без скрытых условий · 18+</div>
@@ -294,18 +298,12 @@
   function getEndTime() {
     const key = 'kuku_timer_v2';
     let end = localStorage.getItem(key);
-    if (!end) {
-      end = Date.now() + 1*3600000 + 47*60000 + 33000;
-      localStorage.setItem(key, end);
-    }
+    if (!end) { end = Date.now() + 1*3600000 + 47*60000 + 33000; localStorage.setItem(key, end); }
     return parseInt(end);
   }
   function updateTimer() {
     const diff = getEndTime() - Date.now();
-    if (diff <= 0) {
-      ['hours','minutes','seconds'].forEach(id => document.getElementById(id).textContent = '00');
-      return;
-    }
+    if (diff <= 0) { ['hours','minutes','seconds'].forEach(id => document.getElementById(id).textContent = '00'); return; }
     document.getElementById('hours').textContent = String(Math.floor(diff/3600000)).padStart(2,'0');
     document.getElementById('minutes').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
     document.getElementById('seconds').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
