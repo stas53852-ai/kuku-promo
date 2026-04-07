@@ -10,398 +10,224 @@
     --purple: #6B21E8;
     --purple-light: #9B59F5;
     --yellow: #FFD700;
-    --yellow-bright: #FFE44D;
     --dark: #0D0B1A;
-    --dark2: #160F2E;
     --card: #1E1540;
     --text: #F0EAFF;
     --muted: #9B8FBF;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     background: var(--dark);
     color: var(--text);
     font-family: 'Nunito', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
+    padding-bottom: 100px;
   }
-
-  /* ФОНОВЫЕ ЭФФЕКТЫ */
   body::before {
     content: '';
     position: fixed;
-    top: -200px;
-    left: 50%;
+    top: -200px; left: 50%;
     transform: translateX(-50%);
-    width: 800px;
-    height: 800px;
+    width: 800px; height: 800px;
     background: radial-gradient(circle, rgba(107,33,232,0.3) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
-
-  .stars {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image:
-      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
-      radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,0.3) 0%, transparent 100%),
-      radial-gradient(1px 1px at 50% 60%, rgba(255,255,255,0.2) 0%, transparent 100%),
-      radial-gradient(1px 1px at 10% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
-      radial-gradient(1px 1px at 90% 70%, rgba(255,255,255,0.2) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
   .container {
     max-width: 480px;
     margin: 0 auto;
-    padding: 20px 16px 40px;
-    position: relative;
-    z-index: 1;
+    padding: 16px 16px 20px;
+    position: relative; z-index: 1;
   }
-
-  /* ЛОГОТИП */
   .logo-wrap {
     text-align: center;
-    padding: 24px 0 8px;
+    padding: 16px 0 4px;
     animation: fadeDown 0.6s ease both;
   }
-
   .logo {
     font-family: 'Unbounded', sans-serif;
-    font-size: 32px;
-    font-weight: 900;
+    font-size: 28px; font-weight: 900;
     color: var(--yellow);
     text-shadow: 0 0 30px rgba(255,215,0,0.5);
-    letter-spacing: -1px;
   }
-
   .logo span { color: #fff; }
-
-  /* HERO КАРТОЧКА */
   .hero-card {
     background: linear-gradient(135deg, #1E1540 0%, #2A1A5E 100%);
     border: 1px solid rgba(107,33,232,0.4);
     border-radius: 24px;
-    padding: 28px 24px;
-    margin: 20px 0;
+    padding: 24px 20px;
+    margin: 14px 0;
     text-align: center;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
     animation: fadeUp 0.7s ease 0.1s both;
     box-shadow: 0 20px 60px rgba(107,33,232,0.3);
   }
-
   .hero-card::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
     background: conic-gradient(from 0deg, transparent 0deg, rgba(107,33,232,0.1) 60deg, transparent 120deg);
     animation: rotate 8s linear infinite;
   }
-
   .badge {
     display: inline-block;
     background: linear-gradient(90deg, var(--purple), var(--purple-light));
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 100px;
-    margin-bottom: 16px;
-    position: relative;
-    z-index: 1;
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 100px;
+    margin-bottom: 12px; position: relative; z-index: 1;
   }
-
   .bonus-amount {
     font-family: 'Unbounded', sans-serif;
-    font-size: 64px;
-    font-weight: 900;
-    color: var(--yellow);
-    line-height: 1;
+    font-size: 60px; font-weight: 900;
+    color: var(--yellow); line-height: 1;
     text-shadow: 0 0 40px rgba(255,215,0,0.6);
-    position: relative;
-    z-index: 1;
+    position: relative; z-index: 1;
     animation: pulse 2s ease-in-out infinite;
   }
-
   .bonus-label {
-    font-size: 16px;
-    color: var(--muted);
-    margin: 4px 0 16px;
-    position: relative;
-    z-index: 1;
+    font-size: 15px; color: var(--muted);
+    margin: 4px 0 14px;
+    position: relative; z-index: 1;
   }
-
   .freespins-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    position: relative;
-    z-index: 1;
+    display: flex; align-items: center;
+    justify-content: center; gap: 12px;
+    position: relative; z-index: 1;
   }
-
   .plus-sign {
     font-family: 'Unbounded', sans-serif;
-    font-size: 28px;
-    color: var(--purple-light);
+    font-size: 24px; color: var(--purple-light);
   }
-
   .fs-block {
     background: rgba(107,33,232,0.3);
     border: 1px solid rgba(107,33,232,0.5);
-    border-radius: 16px;
-    padding: 10px 20px;
+    border-radius: 14px; padding: 8px 18px;
   }
-
   .fs-num {
     font-family: 'Unbounded', sans-serif;
-    font-size: 32px;
-    font-weight: 900;
-    color: #fff;
+    font-size: 28px; font-weight: 900; color: #fff;
   }
-
-  .fs-text {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-
-  /* ТАЙМЕР */
+  .fs-text { font-size: 12px; color: var(--muted); margin-top: 2px; }
   .timer-section {
     background: var(--card);
     border: 1px solid rgba(255,215,0,0.2);
-    border-radius: 20px;
-    padding: 20px;
-    margin: 16px 0;
-    text-align: center;
+    border-radius: 18px; padding: 14px;
+    margin: 12px 0; text-align: center;
     animation: fadeUp 0.7s ease 0.2s both;
   }
-
   .timer-label {
-    font-size: 12px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 2px;
+    margin-bottom: 10px;
   }
-
   .timer-blocks {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    align-items: center;
+    display: flex; justify-content: center;
+    gap: 6px; align-items: center;
   }
-
   .timer-block {
     background: linear-gradient(135deg, var(--purple), #4A0FAD);
-    border-radius: 12px;
-    padding: 10px 14px;
-    min-width: 58px;
+    border-radius: 10px; padding: 8px 12px; min-width: 54px;
   }
-
   .timer-num {
     font-family: 'Unbounded', sans-serif;
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--yellow);
-    line-height: 1;
+    font-size: 26px; font-weight: 900;
+    color: var(--yellow); line-height: 1;
   }
-
-  .timer-unit {
-    font-size: 10px;
-    color: rgba(255,255,255,0.6);
-    margin-top: 2px;
-  }
-
+  .timer-unit { font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 2px; }
   .timer-sep {
     font-family: 'Unbounded', sans-serif;
-    font-size: 24px;
-    color: var(--purple-light);
+    font-size: 22px; color: var(--purple-light);
     animation: blink 1s step-end infinite;
   }
-
-  /* ПРЕИМУЩЕСТВА */
   .features {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 16px 0;
+    display: flex; flex-direction: column;
+    gap: 8px; margin: 12px 0;
     animation: fadeUp 0.7s ease 0.3s both;
   }
-
   .feature-item {
     background: var(--card);
     border: 1px solid rgba(107,33,232,0.2);
-    border-radius: 14px;
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    border-radius: 12px; padding: 12px 14px;
+    display: flex; align-items: center; gap: 12px;
   }
-
-  .feature-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-  }
-
-  .feature-text {
-    font-size: 14px;
-    color: var(--text);
-    line-height: 1.4;
-  }
-
-  .feature-text strong {
-    color: var(--yellow);
-  }
-
-  /* CTA КНОПКА */
-  .cta-wrap {
-    margin: 24px 0 16px;
-    animation: fadeUp 0.7s ease 0.4s both;
-  }
-
-  .cta-btn {
-    display: block;
-    width: 100%;
-    background: linear-gradient(135deg, var(--yellow) 0%, #FFA500 100%);
-    color: #0D0B1A;
-    font-family: 'Unbounded', sans-serif;
-    font-size: 16px;
-    font-weight: 900;
-    text-decoration: none;
-    text-align: center;
-    padding: 20px;
-    border-radius: 18px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 8px 30px rgba(255,215,0,0.4);
-    position: relative;
-    overflow: hidden;
-    letter-spacing: 0.5px;
-  }
-
-  .cta-btn::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    animation: shimmer 2.5s ease infinite;
-  }
-
-  .cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(255,215,0,0.5);
-  }
-
-  .cta-btn:active {
-    transform: translateY(0);
-  }
-
-  .cta-sub {
-    text-align: center;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 10px;
-  }
-
-  /* СЧЁТЧИК ИГРОКОВ */
+  .feature-icon { font-size: 22px; flex-shrink: 0; }
+  .feature-text { font-size: 14px; color: var(--text); line-height: 1.4; }
+  .feature-text strong { color: var(--yellow); }
   .counter-bar {
     background: var(--card);
     border: 1px solid rgba(107,33,232,0.2);
-    border-radius: 14px;
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 16px;
-    animation: fadeUp 0.7s ease 0.5s both;
+    border-radius: 12px; padding: 12px 14px;
+    display: flex; align-items: center; gap: 10px;
+    margin: 0 0 12px;
+    animation: fadeUp 0.7s ease 0.4s both;
   }
-
   .counter-dot {
-    width: 8px;
-    height: 8px;
-    background: #4ADE80;
-    border-radius: 50%;
+    width: 8px; height: 8px;
+    background: #4ADE80; border-radius: 50%;
     box-shadow: 0 0 8px #4ADE80;
     animation: pulse 1.5s ease-in-out infinite;
     flex-shrink: 0;
   }
-
-  .counter-text {
-    font-size: 13px;
-    color: var(--muted);
-  }
-
-  .counter-text strong {
-    color: var(--text);
-  }
-
-  /* ДИСКЛЕЙМЕР */
+  .counter-text { font-size: 13px; color: var(--muted); }
+  .counter-text strong { color: var(--text); }
   .disclaimer {
-    text-align: center;
-    font-size: 11px;
-    color: rgba(155,143,191,0.5);
-    line-height: 1.5;
-    margin-top: 20px;
+    text-align: center; font-size: 11px;
+    color: rgba(155,143,191,0.4); line-height: 1.5;
   }
 
-  /* АНИМАЦИИ */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+  /* ФИКСИРОВАННАЯ КНОПКА */
+  .cta-fixed {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 12px 16px 16px;
+    background: linear-gradient(to top, #0D0B1A 70%, transparent);
+  }
+  .cta-btn {
+    display: block;
+    max-width: 480px; margin: 0 auto;
+    width: 100%;
+    background: linear-gradient(135deg, var(--yellow) 0%, #FFA500 100%);
+    color: #0D0B1A;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 15px; font-weight: 900;
+    text-decoration: none; text-align: center;
+    padding: 18px; border-radius: 16px;
+    border: none; cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 30px rgba(255,215,0,0.5);
+    position: relative; overflow: hidden;
+  }
+  .cta-btn::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2.5s ease infinite;
+  }
+  .cta-btn:active { transform: scale(0.98); }
+  .cta-sub {
+    text-align: center; font-size: 11px;
+    color: var(--muted); margin-top: 6px;
   }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  @keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 200%; }
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.04); } }
+  @keyframes rotate { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+  @keyframes shimmer { 0% { left:-100%; } 100% { left:200%; } }
+  @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
 </style>
 </head>
 <body>
 
-<div class="stars"></div>
-
 <div class="container">
-
-  <!-- ЛОГОТИП -->
   <div class="logo-wrap">
     <div class="logo">KUKU<span>RUKU</span></div>
   </div>
-
-  <!-- HERO КАРТОЧКА -->
   <div class="hero-card">
     <div class="badge">🎁 Бонус для новых игроков</div>
     <div class="bonus-amount">100%</div>
@@ -414,13 +240,11 @@
       </div>
     </div>
   </div>
-
-  <!-- ТАЙМЕР -->
   <div class="timer-section">
-    <div class="timer-label">⏰ Предложение действует</div>
+    <div class="timer-label">⏰ Предложение истекает через</div>
     <div class="timer-blocks">
       <div class="timer-block">
-        <div class="timer-num" id="hours">23</div>
+        <div class="timer-num" id="hours">01</div>
         <div class="timer-unit">часов</div>
       </div>
       <div class="timer-sep">:</div>
@@ -435,8 +259,6 @@
       </div>
     </div>
   </div>
-
-  <!-- ПРЕИМУЩЕСТВА -->
   <div class="features">
     <div class="feature-item">
       <div class="feature-icon">⚡</div>
@@ -448,70 +270,54 @@
     </div>
     <div class="feature-item">
       <div class="feature-icon">💰</div>
-      <div class="feature-text"><strong>Удвой первый депозит</strong> — бонус 100% зачисляется мгновенно</div>
+      <div class="feature-text"><strong>Удвой первый депозит</strong> — бонус зачисляется мгновенно</div>
     </div>
   </div>
-
-  <!-- СЧЁТЧИК -->
   <div class="counter-bar">
     <div class="counter-dot"></div>
     <div class="counter-text"><strong id="online-count">847</strong> игроков получили бонус сегодня</div>
   </div>
-
-  <!-- CTA -->
-  <div class="cta-wrap">
-    <a href="https://track.magicclick.partners/click?o=1824&a=25099&link_id=8054&sub1=prelend_kuku" class="cta-btn">
-      🎁 Забрать бонус сейчас
-    </a>
-    <div class="cta-sub">Бесплатно · Без скрытых условий · 18+</div>
-  </div>
-
   <div class="disclaimer">
     Игра на деньги доступна лицам старше 18 лет.<br>
     Играйте ответственно. Бонус действует согласно правилам казино.
   </div>
+</div>
 
+<div class="cta-fixed">
+  <a href="https://track.magicclick.partners/click?o=1824&a=25099&link_id=8054&sub1=prelend_kuku" class="cta-btn">
+    🎁 Забрать бонус сейчас
+  </a>
+  <div class="cta-sub">Бесплатно · Без скрытых условий · 18+</div>
 </div>
 
 <script>
-  // ТАЙМЕР
   function getEndTime() {
-    const key = 'kuku_timer_end';
+    const key = 'kuku_timer_v2';
     let end = localStorage.getItem(key);
     if (!end) {
-      end = Date.now() + 23 * 3600 * 1000 + 47 * 60 * 1000 + 33 * 1000;
+      end = Date.now() + 1*3600000 + 47*60000 + 33000;
       localStorage.setItem(key, end);
     }
     return parseInt(end);
   }
-
   function updateTimer() {
     const diff = getEndTime() - Date.now();
     if (diff <= 0) {
-      document.getElementById('hours').textContent = '00';
-      document.getElementById('minutes').textContent = '00';
-      document.getElementById('seconds').textContent = '00';
+      ['hours','minutes','seconds'].forEach(id => document.getElementById(id).textContent = '00');
       return;
     }
-    const h = Math.floor(diff / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    document.getElementById('hours').textContent = String(h).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(m).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+    document.getElementById('hours').textContent = String(Math.floor(diff/3600000)).padStart(2,'0');
+    document.getElementById('minutes').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+    document.getElementById('seconds').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
   }
-
   setInterval(updateTimer, 1000);
   updateTimer();
-
-  // СЧЁТЧИК ОНЛАЙН — медленно меняется
   let count = 847;
   setInterval(() => {
-    count += Math.floor(Math.random() * 3) - 1;
+    count += Math.floor(Math.random()*3)-1;
     count = Math.max(800, Math.min(950, count));
     document.getElementById('online-count').textContent = count;
   }, 4000);
 </script>
-
 </body>
 </html>
